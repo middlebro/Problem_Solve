@@ -23,19 +23,24 @@ int main(int argc, const char * argv[]) {
         int n;
         cin >> n;
         for (int i = 0; i < n; ++i) {
-            int w;
+            int w;  // weight
             cin >> w;
+            
+            // push first weight to max_heap (maxheap.size - minheap.size == 0 or 1)
             if (i == 0) {
                 max_heap.push(w);
                 cout << w << endl;
                 continue;
             }
+            // compare w to critical value (maxheap.top)
             if (w < max_heap.top()) {
                 max_heap.push(w);
             }
             else {
                 min_heap.push(w);
             }
+            // maintaining maxheap.size and minheap.size for condition
+            // condition : maxheap.size - minheap.size == 0 or 1
             if (max_heap.size() - 1 > min_heap.size()) {
                 min_heap.push(max_heap.top());
                 max_heap.pop();
@@ -44,6 +49,7 @@ int main(int argc, const char * argv[]) {
                 max_heap.push(min_heap.top());
                 min_heap.pop();
             }
+            // print medium value for current input_(w)
             cout << (i % 2 == 0 ? max_heap.top():(max_heap.top()<min_heap.top() ? max_heap.top():min_heap.top())) << endl;
         }
     }
