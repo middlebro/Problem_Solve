@@ -25,7 +25,19 @@ int main(int argc, const char * argv[]) {
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
-    
+    // test case
+    // input
+    // 3
+    // 10 3
+    // 1 2 3 4 5 6 7 8 9 10
+    // 10 46
+    // 216 53 9 6 20 985 123 621 952 1998
+    // 10 45
+    // 216 53 9 6 20 985 123 621 952 1998
+    // output
+    // 1000000
+    // 980000
+    // N
     int t;
     cin >> t;
     while (t--) {
@@ -45,6 +57,7 @@ int main(int argc, const char * argv[]) {
             int fk = hashfunc1(key[j]);
             int sk = hashfunc2(key[j]);
             if (hash[fk].open == false) {
+                hash[fk].open = true;
                 if (hash[fk].bingo != true) {
                     continue;
                 }
@@ -55,13 +68,14 @@ int main(int argc, const char * argv[]) {
                 }
             }
             else {
-                int idx = (fk + sk) % 1013;
-                while (hash[idx].open != true) {
+                int c = 1;
+                while (hash[(fk + c * sk) % 1013].open == true) {
                     money[j] -= 10000;
-                    idx += sk % 1013;
+                    c++;
                 }
+                hash[(fk + c * sk) % 1013].open = true;
                 money[j] -= 10000;
-                if (hash[idx].bingo != true) {
+                if (hash[(fk + c * sk) % 1013].bingo != true) {
                     continue;
                 }
                 else {
@@ -71,7 +85,11 @@ int main(int argc, const char * argv[]) {
                 }
             }
         }
-        cout << (winner != -1 ? money[winner]:'N') << endl;
+        if (winner != -1) {
+            cout << money[winner] << endl;
+        }
+        else
+            cout << 'N' << endl;
     }
 
     return 0;
