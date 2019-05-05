@@ -25,37 +25,49 @@ int main(int argc, const char * argv[]) {
     int t;
     cin >> t;
     while (t--) {
-        char input;
-        cin >> input;
+        char input = '\0';
         stack<char> op;
         stack<int> number;
         while (input != '$') {
+            cin >> input;
             if ((input == '(') || (input == '+') || (input == '-')) {
                 op.push(input);
             }
             else if (input == ')') {
                 while (!op.empty()) {
-                    if (op.top() == '(') {
-                        op.pop();
+                    char i_i_op = op.top();
+                    op.pop();
+                    int a, b;
+                    if (i_i_op == '(')
                         break;
-                    }
-                    if (number.empty()) {
-                        cout << 'N' << endl;
-                        break;
-                    }
-                    int a = number.top();
-                    number.pop();
-                    if (number.size() == 0) {
-                        op.pop();
-                        number.push(a);
-                    }
-                    else {
-                        
+                    else { // if (i_i_op == '+' || i_i_op == '-')
+                        a = number.top();
+                        number.pop();
+                        b = number.top();
+                        number.pop();
+                        number.push(calculate(b, a, i_i_op));
                     }
                 }
             }
             else
                 number.push(atoi(&input));
+        }
+        while (!op.empty()) {
+            char i_i_op = op.top();
+            if (i_i_op == '(') {
+                break;
+            }
+            op.pop();
+            int a, b;
+            a = number.top();
+            number.pop();
+            if (number.empty()) {
+                op.push('(');
+                break;
+            }
+            b = number.top();
+            number.pop();
+            number.push(calculate(b, a, i_i_op));
         }
         if (number.size() == 1 && op.empty())
             cout << number.top() << endl;
