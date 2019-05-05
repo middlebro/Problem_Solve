@@ -246,7 +246,7 @@ void AVLTree::rebalance(Node* v) {
 
 
 //key가 삽입될 위치 반환
-Node* AVLTree::find( int key, Node* v) {
+Node* AVLTree::find(int key, Node* v) {
     Node* leafNode;
     leafNode = NULL;
     
@@ -266,7 +266,7 @@ Node* AVLTree::find( int key, Node* v) {
 
 
 //노드 삽입
-Node* AVLTree::insert( int key,  string value) {
+Node* AVLTree::insert(int key,  string value) {
     Node *curLeafNode = find(key, root);
     Node *newNode = new Node(key, value);
     Node *insertNode = new Node();
@@ -313,7 +313,7 @@ int main()
             // 해당 입력에 대해 문제의 예시처럼  출력되도록 구현하세요.
             ///학생이 구현.
             tempNode = T.find(key, T.root);
-            if (tempNode == NULL)
+            if (tempNode->key != key)
                 cout << -1 << endl;
             else
                 cout << tempNode->value << " " << tempNode->height << endl;
