@@ -1,6 +1,6 @@
 //
 //  main.cpp
-//  PS2019_Week6_Tree
+//  PS2019_Week6_SkillTree
 //
 //  Created by 서형중 on 13/04/2019.
 //  Copyright © 2019 Hyeongjung Seo. All rights reserved.

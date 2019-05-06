@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE65BCB3226230A600197722 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE65BCB2226230A600197722 /* main.cpp */; };
+		FE9739402280972200FD4616 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE97393F2280972200FD4616 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +23,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FE65BCAF226230A600197722 /* PS2019_Week6_Tree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PS2019_Week6_Tree; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE65BCB2226230A600197722 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		FE65BCAF226230A600197722 /* PS2019_Week6_SkillTree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PS2019_Week6_SkillTree; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE97393F2280972200FD4616 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +41,7 @@
 		FE65BCA6226230A600197722 = {
 			isa = PBXGroup;
 			children = (
-				FE65BCB1226230A600197722 /* PS2019_Week6_Tree */,
+				FE65BCB1226230A600197722 /* PS2019_Week6_SkillTree */,
 				FE65BCB0226230A600197722 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,25 +49,25 @@
 		FE65BCB0226230A600197722 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FE65BCAF226230A600197722 /* PS2019_Week6_Tree */,
+				FE65BCAF226230A600197722 /* PS2019_Week6_SkillTree */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FE65BCB1226230A600197722 /* PS2019_Week6_Tree */ = {
+		FE65BCB1226230A600197722 /* PS2019_Week6_SkillTree */ = {
 			isa = PBXGroup;
 			children = (
-				FE65BCB2226230A600197722 /* main.cpp */,
+				FE97393F2280972200FD4616 /* main.cpp */,
 			);
-			path = PS2019_Week6_Tree;
+			path = PS2019_Week6_SkillTree;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FE65BCAE226230A600197722 /* PS2019_Week6_Tree */ = {
+		FE65BCAE226230A600197722 /* PS2019_Week6_SkillTree */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FE65BCB6226230A600197722 /* Build configuration list for PBXNativeTarget "PS2019_Week6_Tree" */;
+			buildConfigurationList = FE65BCB6226230A600197722 /* Build configuration list for PBXNativeTarget "PS2019_Week6_SkillTree" */;
 			buildPhases = (
 				FE65BCAB226230A600197722 /* Sources */,
 				FE65BCAC226230A600197722 /* Frameworks */,
@@ -77,9 +77,9 @@
 			);
 			dependencies = (
 			);
-			name = PS2019_Week6_Tree;
+			name = PS2019_Week6_SkillTree;
 			productName = PS2019_Week6_Tree;
-			productReference = FE65BCAF226230A600197722 /* PS2019_Week6_Tree */;
+			productReference = FE65BCAF226230A600197722 /* PS2019_Week6_SkillTree */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -96,7 +96,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FE65BCAA226230A600197722 /* Build configuration list for PBXProject "PS2019_Week6_Tree" */;
+			buildConfigurationList = FE65BCAA226230A600197722 /* Build configuration list for PBXProject "PS2019_Week6_SkillTree" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -108,7 +108,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FE65BCAE226230A600197722 /* PS2019_Week6_Tree */,
+				FE65BCAE226230A600197722 /* PS2019_Week6_SkillTree */,
 			);
 		};
 /* End PBXProject section */
@@ -118,7 +118,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE65BCB3226230A600197722 /* main.cpp in Sources */,
+				FE9739402280972200FD4616 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +255,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FE65BCAA226230A600197722 /* Build configuration list for PBXProject "PS2019_Week6_Tree" */ = {
+		FE65BCAA226230A600197722 /* Build configuration list for PBXProject "PS2019_Week6_SkillTree" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FE65BCB4226230A600197722 /* Debug */,
@@ -264,7 +264,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FE65BCB6226230A600197722 /* Build configuration list for PBXNativeTarget "PS2019_Week6_Tree" */ = {
+		FE65BCB6226230A600197722 /* Build configuration list for PBXNativeTarget "PS2019_Week6_SkillTree" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FE65BCB7226230A600197722 /* Debug */,
