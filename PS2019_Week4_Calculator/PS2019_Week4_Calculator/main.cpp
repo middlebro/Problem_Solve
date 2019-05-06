@@ -8,37 +8,46 @@
 
 #include <iostream>
 #include <stack>
-#include <vector>
+#include <queue>
+#include <cstdlib>
+#include <sstream>
 using namespace std;
 
-int calculate(int a, int b, char op) {
-    if (op == '+')
+int calculate(int a, int b, string op) {
+    if (op == "+")
         return a + b;
-    else if (op == '-')
-        return a - b;
     else
-        return NULL;
+        return a - b;
 }
 
-int main(int argc, const char * argv[]) {
+int main() {
     ios::sync_with_stdio(false);
     int t;
     cin >> t;
     while (t--) {
-        char input = '\0';
-        stack<char> op;
+        string i, input = "";
+        stack<string> op;
         stack<int> number;
-        while (input != '$') {
+        queue<string> formula;
+        while (input != "$") {
             cin >> input;
-            if ((input == '(') || (input == '+') || (input == '-')) {
+            formula.push(input);
+        }
+        while (!formula.empty()) {
+            input = formula.front();
+            formula.pop();
+            if (input == " " || input == "$") {
+                continue;
+            }
+            if ((input == "(") || (input == "+") || (input == "-")) {
                 op.push(input);
             }
-            else if (input == ')') {
+            else if (input == ")") {
                 while (!op.empty()) {
-                    char i_i_op = op.top();
+                    string i_i_op = op.top();
                     op.pop();
                     int a, b;
-                    if (i_i_op == '(')
+                    if (i_i_op == "(")
                         break;
                     else { // if (i_i_op == '+' || i_i_op == '-')
                         a = number.top();
@@ -49,12 +58,20 @@ int main(int argc, const char * argv[]) {
                     }
                 }
             }
-            else
-                number.push(atoi(&input));
+            else {
+                if (!op.empty() && op.top() == "-") {
+                    number.push(-atoi(input.c_str()));
+                    op.pop();
+                    op.push("+");
+                }
+                else
+                    number.push(atoi(input.c_str()));
+            }
+            
         }
         while (!op.empty()) {
-            char i_i_op = op.top();
-            if (i_i_op == '(') {
+            string i_i_op = op.top();
+            if (i_i_op == "(") {
                 break;
             }
             op.pop();
@@ -62,7 +79,7 @@ int main(int argc, const char * argv[]) {
             a = number.top();
             number.pop();
             if (number.empty()) {
-                op.push('(');
+                op.push("(");
                 break;
             }
             b = number.top();
@@ -72,7 +89,7 @@ int main(int argc, const char * argv[]) {
         if (number.size() == 1 && op.empty())
             cout << number.top() << endl;
         else
-            cout << 'N' << endl;
+            cout << "N" << endl;
     }
     return 0;
 }
